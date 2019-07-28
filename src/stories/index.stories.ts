@@ -12,6 +12,7 @@ storiesOf('button', module)
   .add('basic', () => ({
     component: ButtonComponent,
     props: {
+      icon: 'globe',
       text: 'Hello'
     }
   }))

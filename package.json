@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run clean && npm run lib && npm run story",
+    "start": "npm run story",
     "build": "ng build",
     "build:production": "npm run clean && ng build --prod",
     "clean": "rimraf dist",
@@ -13,9 +13,11 @@
     "story": "start-storybook -p 6006",
     "story:build": "build-storybook",
     "lib:version": "npm version patch --prefix projects/lib-shared",
-    "lib:build": "ng build lib-shared",
-    "lib:pack": "cd dist/lib-shared && npm pack",
-    "lib": "npm run lib:version && npm run lib:build && npm run lib:pack"
+    "lib:start": "npm run clean && ng build lib-shared  --watch",
+    "lib:build": "npm run clean && ng build lib-shared",
+    "lib:pack": "npm run lib:build && cd dist/lib-shared && npm pack",
+    "lib:install": "npm install dist/lib-shared",
+    "lib": "npm run lib:pack && lib:install"
   },
   "private": true,
   "dependencies": {
@@ -27,7 +29,7 @@
     "@angular/platform-browser": "~8.1.1",
     "@angular/platform-browser-dynamic": "~8.1.1",
     "@angular/router": "~8.1.1",
-    "lib-shared": "file:dist/lib-shared/lib-shared-0.0.1.tgz",
+    "lib-shared": "file:dist/lib-shared",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

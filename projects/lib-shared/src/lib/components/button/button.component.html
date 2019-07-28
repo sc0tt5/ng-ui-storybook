@@ -1,1 +1,3 @@
-<button class="lib-button" (click)="onClick($event)" [disabled]="disabled">{{ text }}</button>
+<button class="lib-button" (click)="onClick($event)" [disabled]="disabled">
+  <i *ngIf="icon" class="fa fa-{{ icon }}"></i>{{ text }}
+</button>
