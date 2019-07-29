@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'my-button',
@@ -6,13 +7,16 @@ import { Component, Input } from '@angular/core';
   templateUrl: './button.component.html'
 })
 export class ButtonComponent {
+  @Input() message: string;
   @Input() text: string;
   @Input() disabled: boolean;
   @Input() icon: string;
+  @Output() myEvent: EventEmitter<any> = new EventEmitter();
 
-  constructor() {}
+  constructor(private commonService: CommonService) {}
 
-  onClick(event: any) {
-    console.log('my-button onClick:::', event);
+  onClick() {
+    this.commonService.saySomething(this.message);
+    this.myEvent.emit(this.message);
   }
 }

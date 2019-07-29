@@ -17,7 +17,7 @@
     "lib:build": "npm run clean && ng build lib-shared",
     "lib:pack": "npm run lib:build && cd dist/lib-shared && npm pack",
     "lib:install": "npm install dist/lib-shared",
-    "lib": "npm run lib:pack && lib:install"
+    "lib": "npm run lib:pack && npm run lib:install"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +42,7 @@
     "@angular/language-service": "~8.1.1",
     "@babel/core": "^7.5.5",
     "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
     "@storybook/addon-notes": "^5.1.9",
     "@storybook/addons": "^5.1.9",
