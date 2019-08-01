@@ -1,22 +1,20 @@
-import path from 'path';
-cosole.log('testttttttt');
+const path = require('path');
 
-module.exports = ({ config }) => {
-    const ts = {
-        test: /\.(ts|tsx)$/,
-        use: ['awesome-typescript-loader'],
-        include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, './')]
-    };
-    config.module.rules.push(ts);
-    config.resolve.extensions.push('.ts', '.tsx');
+module.exports = async ({ config }) => {
+    config.module.rules.push(
+        {
+            test: /\.(ts|tsx)$/,
+            use: ['awesome-typescript-loader'],
+            include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, './')]
+        },
+        {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
+            include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, './')]
+        }
+    );
 
-    const scss = {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-        include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, './')]
-    };
-    config.module.rules.push(scss);
-    config.resolve.extensions.push('.scss');
+    config.resolve.extensions.push('.ts', '.tsx', '.scss');
 
     return config;
 };
