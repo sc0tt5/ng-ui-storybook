@@ -6,34 +6,30 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import markdown from './my-button.notes.md';
 
 storiesOf('ButtonComponent', module)
-  .addDecorator(withKnobs)
-  .addDecorator(
-    moduleMetadata({
-      providers: [CommonService]
-    })
-  )
-  .add(
-    'basic',
-    () => ({
-      component: ButtonComponent,
-      props: {
-        icon: 'globe',
-        text: text('Button Text', 'Hello', 'General'),
-        message: text('Console Message', 'button click from storybook...', 'General'),
-        myEvent: action('Hello ButtonComponent from Storybook!')
-      }
-    }),
-    {
-      notes: { markdown }
-    }
-  )
-  .add('disabled', () => ({
-    component: ButtonComponent,
-    props: {
-      icon: 'globe',
-      text: text('Button Text', 'Hello', 'General'),
-      message: text('Console Message', 'button click from storybook...', 'General'),
-      myEvent: action('Hello ButtonComponent from Storybook!'),
-      disabled: boolean('Disabled', true, 'General')
-    }
-  }));
+    .addDecorator(withKnobs)
+    .addDecorator(moduleMetadata({ providers: [CommonService] }))
+    .add(
+        'basic',
+        () => ({
+            component: ButtonComponent,
+            props: {
+                icon: 'globe',
+                text: text('Button Text', 'Hello', 'General'),
+                message: text('Console Message', 'button click from storybook...', 'General'),
+                myEvent: action('Hello ButtonComponent from Storybook!')
+            }
+        }),
+        {
+            notes: { markdown }
+        }
+    )
+    .add('disabled', () => ({
+        component: ButtonComponent,
+        props: {
+            icon: 'globe',
+            text: text('Button Text', 'Hello', 'General'),
+            message: text('Console Message', 'button click from storybook...', 'General'),
+            myEvent: action('Hello ButtonComponent from Storybook!'),
+            disabled: boolean('Disabled', true, 'General')
+        }
+    }));

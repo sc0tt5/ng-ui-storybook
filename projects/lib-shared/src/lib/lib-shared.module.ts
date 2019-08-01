@@ -4,9 +4,9 @@ import { ButtonComponent } from './components/button/button.component'; // '@lib
 import { CommonService } from './services/common.service';
 
 @NgModule({
-  declarations: [ButtonComponent],
-  providers: [CommonService],
-  imports: [CommonModule],
-  exports: [ButtonComponent]
+    declarations: [ButtonComponent],
+    providers: [CommonService],
+    imports: [CommonModule],
+    exports: [ButtonComponent]
 })
 export class LibSharedModule {}

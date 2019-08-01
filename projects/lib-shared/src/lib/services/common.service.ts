@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CommonService {
-  constructor() {}
+    constructor() {}
 
-  saySomething(message: string) {
-    console.log(message);
-  }
+    saySomething(message: string) {
+        console.log(message);
+    }
 }
