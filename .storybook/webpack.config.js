@@ -5,16 +5,16 @@ module.exports = async ({ config }) => {
         {
             test: /\.(ts|tsx)$/,
             use: ['awesome-typescript-loader'],
-            include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, './')]
-        },
-        {
+            include: [path.resolve(__dirname, '../'), path.resolve(__dirname, './')]
+        }
+        /* {
             test: /\.scss$/,
             use: ['style-loader', 'css-loader', 'sass-loader'],
-            include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, './')]
-        }
+            include: [path.resolve(__dirname, '../'), path.resolve(__dirname, './')]
+        } */
     );
 
-    config.resolve.extensions.push('.ts', '.tsx', '.scss');
+    config.resolve.extensions.push('.ts', '.tsx');
 
     return config;
 };

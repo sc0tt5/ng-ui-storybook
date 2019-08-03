@@ -1,40 +1,37 @@
-// FIXME: sass-loader not working properly
-/* import { create } from '@storybook/theming';
-import customtheme from './customtheme.scss';
+import { create } from '@storybook/theming';
 
 export default create({
-    base: customtheme.base,
+    base: 'dark',
 
-    colorPrimary: customtheme.colorPrimary,
-    colorSecondary: customtheme.colorSecondary,
+    colorPrimary: 'hotpink',
+    colorSecondary: 'deepskyblue',
 
     // UI
-    appBg: customtheme.appBg,
-    appContentBg: customtheme.appContentBg,
-    appBorderColor: customtheme.appBorderColor,
-    appBorderRadius: customtheme.appBorderRadius,
+    appBg: 'white',
+    appContentBg: 'silver',
+    appBorderColor: 'grey',
+    appBorderRadius: 4,
 
     // Typography
-    fontBase: customtheme.fontBase,
-    fontCode: customtheme.fontCode,
+    fontBase: '"Open Sans", sans-serif',
+    fontCode: 'monospace',
 
     // Text colors
-    textColor: customtheme.textColor,
-    textInverseColor: customtheme.textInverseColor,
+    textColor: 'black',
+    textInverseColor: 'rgba(255,255,255,0.9)',
 
     // Toolbar default and active colors
-    barTextColor: customtheme.barTextColor,
-    barSelectedColor: customtheme.barSelectedColor,
-    barBg: customtheme.barBg,
+    barTextColor: 'silver',
+    barSelectedColor: 'black',
+    barBg: 'hotpink',
 
     // Form colors
-    inputBg: customtheme.inputBg,
-    inputBorder: customtheme.inputBorder,
-    inputTextColor: customtheme.inputTextColor,
-    inputBorderRadius: customtheme.inputBorderRadius,
+    inputBg: 'white',
+    inputBorder: 'silver',
+    inputTextColor: 'black',
+    inputBorderRadius: 4,
 
     brandTitle: 'My custom storybook',
     brandUrl: 'https://example.com',
     brandImage: 'https://placehold.it/350x150'
 });
- */

@@ -1,5 +1,5 @@
 import { configure, addParameters } from '@storybook/angular';
-import customtheme from './customtheme';
+import customtheme from './customtheme.js';
 
 addParameters({
     options: {
